@@ -12,7 +12,7 @@
 
     initData(){
       this.data = dataSource.books;
-      this.favoriteBook = [];
+      this.favBooksArr = [];
       this.filters = [];
     }
 
@@ -55,9 +55,9 @@
       if(clickedElem.classList.contains('book__image')){
         const favoriteOnOff = clickedElem.classList.toggle('favorite');
         if (favoriteOnOff) {
-          this.favoriteBook.push(clickedElem.getAttribute('data-id'));
+          this.favBooksArr.push(clickedElem.getAttribute('data-id'));
         }else{
-          this.favoriteBook.splice(this.favoriteBook.indexOf(clickedElem.getAttribute('data-id'),1));
+          this.favBooksArr.splice(this.favBooksArr.indexOf(clickedElem.getAttribute('data-id'),1));
         }
       }
     }
@@ -89,4 +89,5 @@
   }
 
   const app = new BooksList();
+
 }
